@@ -28,4 +28,12 @@ public class WhenWeCreateANewDog {
         assertThat(fido.toString(), containsString("black"));
 
     }
+    @Test
+    public void a_dog_can_have_several_colours()
+    {
+        Dog fido = Dog.called("Fido").ofBreed("Labrador").andOfColour("Black", "White");
+        assertThat(fido.getColour(), contains("Black", "White"));
+        assertThat(fido.getColour(), hasItem("Black"));
+        assertThat(fido.getColour(), not(hasItem("Red")));
+    }
 }
