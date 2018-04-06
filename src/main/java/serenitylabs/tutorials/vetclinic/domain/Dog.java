@@ -12,6 +12,10 @@ public class Dog {
         this.colour = colour;
     }
 
+    @Override public String toString()
+    {
+        return name + " the " + (colour +" "+ breed).toLowerCase();
+    }
     public String getName() {
         return name;
     }
